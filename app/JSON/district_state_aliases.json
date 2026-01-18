@@ -1,0 +1,103 @@
+{
+  "states": {
+    "The Dadra And Nagar Haveli And Daman And Diu": [
+      "dadra and nagar haveli",
+      "daman and diu",
+      "dadra and nagar haveli and daman and diu"
+    ]
+  },
+  "districts": {
+    "Ahmedabad": [
+      "ahmadabad",
+      "ahmedabad"
+    ],
+    "Mahendragarh": [
+      "mahendragarh"
+    ],
+    "Madhepura": [
+      "madhepura"
+    ],
+    "Bhojpur": [
+      "bhojpur"
+    ],
+    "Madurai": [
+      "madurai"
+    ],
+    "Ratnagiri": [
+      "ratnagiri"
+    ],
+    "Anand": [
+      "anand"
+    ],
+    "Gandhinagar": [
+      "gandhinagar"
+    ],
+    "Dhenkanal": [
+      "dhenkanal"
+    ],
+    "Valsad": [
+      "valsad"
+    ],
+    "Udhampur": [
+      "udhampur"
+    ],
+    "South 24 Parganas": [
+      "south parganas",
+      "south twenty four parganas"
+    ],
+    "Dakshin Dinajpur": [
+      "south dinajpur"
+    ],
+    "Mahabubnagar": [
+      "mahabub nagar",
+      "mahabubnagar"
+    ],
+    "Aurangabad": [
+      "aurangabad",
+      "aurangabadbh"
+    ],
+    "Bandipora": [
+      "bandipur"
+    ],
+    "South Andamans": [
+      "south andaman"
+    ],
+    "Dadra And Nagar Haveli": [
+      "dadra and nagar haveli"
+    ],
+    "Daman": [
+      "daman"
+    ],
+    "Diu": [
+      "diu"
+    ],
+    "Sundargarh": [
+      "sundergarh"
+    ],
+    "Balangir": [
+      "balangir"
+    ],
+    "Puducherry": [
+      "puducherry"
+    ],
+    "S.A.S Nagar": [
+      "sas nagarmohali",
+      "sas nagar mohali"
+    ],
+    "Uttar Dinajpur": [
+      "uttar dinajpur",
+      "north dinajpur"
+    ],
+    "Purba Medinipur": [
+      "east midnapur"
+    ],
+    "Howrah": [
+      "haora",
+      "howrah"
+    ],
+    "Hooghly": [
+      "hooghly",
+      "hugli"
+    ]
+  }
+}
