@@ -1,20 +1,33 @@
+from sqlite3 import Date
 from fastapi import FastAPI, UploadFile, File, BackgroundTasks, Query
 from app.api import auth
 from app.core.data_ingestion import process_uidai_csv
 import json
 from enum import Enum
+from pydantic import BaseModel
 
 class DataSource(str, Enum):
     biometric = "biometric"
     demographic = "demographic"
     enrolment = "enrolment"
-    
-def background_processing(contents: bytes, source: DataSource):
+
+class metadata(BaseModel):
+    pass
+
+class filter(BaseModel):
+    date:Date
+    state:str
+    distric:str
+    pincode:str
+    pass
+
+async def background_processing(contents: bytes, source: DataSource):
     # This runs after the user gets the "Processing started" message
-    events = process_uidai_csv(contents, source)
-    with open(f"extra/events_{source}.json", "w") as f:
-        json.dump(events, f)
-    print(f"Finished processing {source} dataset")
+    events = await process_uidai_csv(contents, source)
+    # with open(f"extra/events_{source}.json", "w") as f:
+    #     json.dump(events, f)
+    if events:
+        print(f"Finished processing {source} dataset")
 
 app = FastAPI(title="UIDAI Hackathon 2026 API")
 
@@ -36,3 +49,13 @@ async def upload_csv(
         "message": f"File '{file.filename}' received and processing started in background.",
         "source_selected": source
     }
+
+@app.post("/search_filter")
+def search_filter(data:filter):
+    print(data.pincode)
+    pass
+
+@app.post("metadata")
+def metadata():
+    
+    pass

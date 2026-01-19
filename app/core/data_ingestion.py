@@ -6,6 +6,8 @@ import os
 from rapidfuzz import process, fuzz
 from datetime import datetime
 import json
+from app.utils.database import biometric_collection
+import pandas as pd
 
 # CONSTANTS
 with open("app/JSON/location.json", "r", encoding="utf-8") as f:
@@ -46,18 +48,32 @@ def normalize_text(text):
     text = re.sub(r'\s+', ' ', text)
     return text
 
-def process_uidai_csv(contents, source):
+async def savetoDB(canonical_events):
+    # await biometric_collection.create_index(
+    # [("date", 1), ("state", 1), ("district", 1), ("pincode", 1)],
+    # unique=True)
+    if canonical_events:
+        await biometric_collection.insert_many(canonical_events)
+        # print(f"Inserted IDs: {result.inserted_ids}")
+    pass
+
+
+async def process_uidai_csv(contents, source):
     """
     Takes raw CSV file bytes
     Returns list of canonical event records
     """
 
-    text = contents.decode("utf-8", errors="ignore")
-    reader = csv.DictReader(StringIO(text))
+    # text = contents.decode("utf-8", errors="ignore")
+    # reader = csv.DictReader(StringIO(text))
+    
+    df = pd.read_csv(StringIO(contents.decode("utf-8", errors="ignore")))
+    df = df.drop_duplicates(keep="first")
+    rows = df.to_dict('records')
 
     canonical_events = []
 
-    for row in reader:
+    for row in rows:
 
         raw_date = row["date"]
         raw_state = row["state"]
@@ -75,8 +91,9 @@ def process_uidai_csv(contents, source):
             "district": dist,
             "pincode": raw_pincode,
             "mertics": {
-                key: value for key, value in row.items()
-                if key.lower() not in STANDARD_COLUMNS
+                    key: int(float(value)) if value not in (None, "", " ") else 0
+                    for key, value in row.items()
+                    if key.lower() not in STANDARD_COLUMNS
             },
             "metadata": {
                 "soruce_dataset": source,
@@ -87,8 +104,73 @@ def process_uidai_csv(contents, source):
             }
         }
         canonical_events.append(event)
+    print("process_uidai_csv")
+    await savetoDB(canonical_events)
+    print("data save finish")
     return canonical_events
 
+# async def process_uidai_csv(contents, source):
+#     """
+#     Takes raw CSV file bytes, merges duplicates by date+state+district+pincode,
+#     sums numeric metrics, and saves to MongoDB.
+#     """
+#     text = contents.decode("utf-8", errors="ignore")
+#     reader = csv.DictReader(StringIO(text))
+
+#     # Dictionary to merge events
+#     events_dict = {}  # key = (date, state, district, pincode)
+
+#     for row in reader:
+#         raw_date = row["date"]
+#         raw_state = row["state"]
+#         raw_district = row["district"]
+#         raw_pincode = row["pincode"]
+
+#         state_norm = normalize_text(raw_state)
+#         district_norm = normalize_text(raw_district)
+#         state, dist, score = get_fuzzy_match(state_norm, district_norm)
+
+#         # Convert metrics to int when possible
+#         metrics = {}
+#         for k, v in row.items():
+#             if k.lower() not in STANDARD_COLUMNS:
+#                 try:
+#                     metrics[k] = int(v)
+#                 except (ValueError, TypeError):
+#                     metrics[k] = v  # keep as string if not numeric
+
+#         key = (raw_date, state, dist, raw_pincode)
+
+#         if key in events_dict:
+#             # Merge numeric metrics
+#             for k, v in metrics.items():
+#                 if isinstance(v, int):
+#                     events_dict[key]["metrics"][k] = events_dict[key]["metrics"].get(k, 0) + v
+#                 else:
+#                     events_dict[key]["metrics"][k] = v  # overwrite non-numeric
+#         else:
+#             # Create new event
+#             events_dict[key] = {
+#                 "date": datetime.strptime(raw_date, "%Y-%m-%d"),  # store as datetime
+#                 "state": state,
+#                 "district": dist,
+#                 "pincode": raw_pincode,
+#                 "metrics": metrics,
+#                 "metadata": {
+#                     "source_dataset": source,
+#                     "raw_state": raw_state,
+#                     "raw_district": raw_district,
+#                     "dist_confidence_score": score,
+#                     "processed_at": datetime.now(),
+#                 }
+#             }
+
+#     canonical_events = list(events_dict.values())
+
+#     print(f"Processed {len(canonical_events)} unique events")
+#     await savetoDB(canonical_events)
+#     print("Data saved to MongoDB")
+#     return canonical_events
 
 
 # Load or initialize aliases
