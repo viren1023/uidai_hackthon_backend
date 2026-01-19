@@ -16,7 +16,8 @@
     ],
     "West Bengal": [
       "westbengal",
-      "west bangal"
+      "west bangal",
+      "west bengli"
     ],
     "Chhattisgarh": [
       "chhatisgarh"
@@ -1147,7 +1148,8 @@
       "nalanda"
     ],
     "Thane": [
-      "thane"
+      "thane",
+      "dist thane"
     ],
     "Raigarh": [
       "raigarh"
@@ -2366,6 +2368,36 @@
     ],
     "Namchi": [
       "namchi"
+    ],
+    "Mangan": [
+      "mangan"
+    ],
+    "Pherzawl": [
+      "pherzawl"
+    ],
+    "Salumbar": [
+      "salumbar"
+    ],
+    "Beawar": [
+      "beawar"
+    ],
+    "Didwana-Kuchaman": [
+      "didwanakuchaman"
+    ],
+    "Kotputli-Behror": [
+      "kotputlibehror"
+    ],
+    "Phalodi": [
+      "phalodi"
+    ],
+    "Balotra": [
+      "balotra"
+    ],
+    "Khairthal-Tijara": [
+      "khairthaltijara"
+    ],
+    "Ahilyanagar": [
+      "ahilyanagar"
     ]
   }
 }

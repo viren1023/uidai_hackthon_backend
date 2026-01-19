@@ -9,7 +9,7 @@ from pydantic import BaseModel
 class DataSource(str, Enum):
     biometric = "biometric"
     demographic = "demographic"
-    enrolment = "enrolment"
+    enrolment = "enrollment"
 
 class metadata(BaseModel):
     pass
@@ -52,7 +52,7 @@ async def upload_csv(
 
 @app.post("/search_filter")
 def search_filter(data:filter):
-    print(data.pincode)
+    
     pass
 
 @app.post("metadata")

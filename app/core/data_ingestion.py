@@ -6,15 +6,15 @@ import os
 from rapidfuzz import process, fuzz
 from datetime import datetime
 import json
-from app.utils.database import biometric_collection
+from app.utils.database import biometric_collection,demographic_collection,enrollment_collection
 import pandas as pd
 
 # CONSTANTS
+METADATA_FILE = "app/JSON/full_metadata.json"
 with open("app/JSON/location.json", "r", encoding="utf-8") as f:
     MASTER_DATA = json.load(f)
 STANDARD_COLUMNS = {"date", "state", "district", "pincode"}
 STATE_LOWER_MAP = {s.lower(): s for s in MASTER_DATA.keys()}
-    
 ALL_DISTRICTS = []
 DISTRICT_TO_STATE = {}
 for state, districts in MASTER_DATA.items():
@@ -48,12 +48,22 @@ def normalize_text(text):
     text = re.sub(r'\s+', ' ', text)
     return text
 
-async def savetoDB(canonical_events):
+async def savetoDB(canonical_events,source):
     # await biometric_collection.create_index(
     # [("date", 1), ("state", 1), ("district", 1), ("pincode", 1)],
     # unique=True)
+    if source == "biometric":
+        collection=biometric_collection
+        pass
+    if source == "demographic":
+        collection=demographic_collection
+        pass
+    if source == "enrollment":
+        collection=enrollment_collection
+        pass
+
     if canonical_events:
-        await biometric_collection.insert_many(canonical_events)
+        await collection.insert_many(canonical_events)
         # print(f"Inserted IDs: {result.inserted_ids}")
     pass
 
@@ -72,6 +82,12 @@ async def process_uidai_csv(contents, source):
     rows = df.to_dict('records')
 
     canonical_events = []
+    
+    if os.path.exists(METADATA_FILE):
+        with open(METADATA_FILE, "r") as f:
+            full_metadata = json.load(f)
+    else:
+        full_metadata = {}
 
     for row in rows:
 
@@ -84,9 +100,20 @@ async def process_uidai_csv(contents, source):
         district_norm = normalize_text(raw_district)
 
         state, dist, score = get_fuzzy_match(state_norm, district_norm)
+        
+        if state not in full_metadata:
+            full_metadata[state] = {}
+        
+        # Ensure district exists within state
+        if dist not in full_metadata[state]:
+            full_metadata[state][dist] = []
+        
+        # Append pincode if not already present
+        if raw_pincode not in full_metadata[state][dist]:
+            full_metadata[state][dist].append(raw_pincode)
 
         event = {
-            "date": raw_date,
+            "date": datetime.strptime(raw_date, "%d-%m-%Y"),
             "state": state,
             "district": dist,
             "pincode": raw_pincode,
@@ -104,8 +131,11 @@ async def process_uidai_csv(contents, source):
             }
         }
         canonical_events.append(event)
+    with open(METADATA_FILE, "w") as f:
+        json.dump(full_metadata, f, indent=4)
+        
     print("process_uidai_csv")
-    await savetoDB(canonical_events)
+    await savetoDB(canonical_events,source)
     print("data save finish")
     return canonical_events
 
