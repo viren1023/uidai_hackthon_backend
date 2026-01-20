@@ -114,8 +114,8 @@ async def process_uidai_csv(contents, source):
 
         event = {
             "date": datetime.strptime(raw_date, "%d-%m-%Y"),
-            "state": state,
-            "district": dist,
+            "state": state.title(),
+            "district": dist.title(),
             "pincode": raw_pincode,
             "mertics": {
                     key: int(float(value)) if value not in (None, "", " ") else 0

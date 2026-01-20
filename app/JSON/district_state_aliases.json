@@ -1,15 +1,9 @@
 {
   "states": {
     "The Dadra And Nagar Haveli And Daman And Diu": [
-      "dadra and nagar haveli",
+      "dadra and nagar haveli and daman and diu",
       "daman and diu",
-      "dadra and nagar haveli and daman and diu"
-    ],
-    "Ladakh": [
-      "jammu and kashmir"
-    ],
-    "Delhi": [
-      "sikkim"
+      "dadra and nagar haveli"
     ],
     "West Bengal": [
       "westbengal",
@@ -19,15 +13,11 @@
     "Chhattisgarh": [
       "chhatisgarh"
     ],
-    "Rajasthan": [
-      "chandigarh"
+    "Tamil Nadu": [
+      "tamilnadu"
     ]
   },
   "districts": {
-    "Ahmedabad": [
-      "ahmadabad",
-      "ahmedabad"
-    ],
     "Mahendragarh": [
       "mahendragarh"
     ],
@@ -56,75 +46,12 @@
     "Valsad": [
       "valsad"
     ],
-    "Udhampur": [
-      "udhampur"
-    ],
-    "South 24 Parganas": [
-      "south parganas",
-      "south twenty four parganas",
-      "south pargana"
-    ],
-    "Dakshin Dinajpur": [
-      "south dinajpur"
-    ],
-    "Mahabubnagar": [
-      "mahabub nagar",
-      "mahabubnagar",
-      "mahbubnagar"
-    ],
-    "Aurangabad": [
-      "aurangabad",
-      "aurangabadbh"
-    ],
-    "Bandipora": [
-      "bandipur",
-      "bandipore"
-    ],
-    "South Andamans": [
-      "south andaman",
-      "andamans"
-    ],
-    "Dadra And Nagar Haveli": [
-      "dadra and nagar haveli"
-    ],
-    "Daman": [
-      "daman"
-    ],
-    "Diu": [
-      "diu"
-    ],
-    "Sundargarh": [
-      "sundergarh"
-    ],
-    "Balangir": [
-      "balangir"
-    ],
-    "Puducherry": [
-      "puducherry"
-    ],
-    "S.A.S Nagar": [
-      "sas nagarmohali",
-      "sas nagar mohali"
-    ],
-    "Uttar Dinajpur": [
-      "uttar dinajpur",
-      "north dinajpur"
-    ],
-    "Purba Medinipur": [
-      "east midnapur"
-    ],
-    "Howrah": [
-      "haora",
-      "howrah",
-      "hawrah"
+    "Salem": [
+      "salem"
     ],
     "Hooghly": [
       "hooghly",
-      "hugli",
       "hooghiy"
-    ],
-    "Salem": [
-      "salem"
     ],
     "Paschim Medinipur": [
       "paschim medinipur",
@@ -180,7 +107,8 @@
       "wardha"
     ],
     "Nabarangpur": [
-      "nabarangapur"
+      "nabarangapur",
+      "nabarangpur"
     ],
     "Shahid Bhagat Singh Nagar": [
       "shaheed bhagat singh nagar"
@@ -206,6 +134,10 @@
     ],
     "Hyderabad": [
       "hyderabad"
+    ],
+    "Sundargarh": [
+      "sundergarh",
+      "sundargarh"
     ],
     "Kurnool": [
       "kurnool"
@@ -247,6 +179,10 @@
     "Mysuru": [
       "mysuru"
     ],
+    "Purba Medinipur": [
+      "purba medinipur",
+      "east midnapur"
+    ],
     "Ernakulam": [
       "ernakulam"
     ],
@@ -287,13 +223,15 @@
       "birbhum"
     ],
     "Visakhapatnam": [
-      "visakhapatnam"
+      "visakhapatnam",
+      "visakhapatanam"
     ],
     "Hardoi": [
       "hardoi"
     ],
     "Siddharthnagar": [
-      "siddharthnagar"
+      "siddharthnagar",
+      "siddharth nagar"
     ],
     "Dhanbad": [
       "dhanbad"
@@ -306,11 +244,8 @@
     ],
     "North 24 Parganas": [
       "north parganas",
-      "north twenty four parganas"
-    ],
-    "Leh Ladakh": [
-      "leh",
-      "leh ladakh"
+      "north twenty four parganas",
+      "paraganas north"
     ],
     "West Godavari": [
       "west godavari"
@@ -341,7 +276,8 @@
       "namakkal"
     ],
     "Thiruvarur": [
-      "thiruvarur"
+      "thiruvarur",
+      "tiruvarur"
     ],
     "Karimnagar": [
       "karimnagar"
@@ -379,6 +315,9 @@
     ],
     "Vadodara": [
       "vadodara"
+    ],
+    "Balangir": [
+      "balangir"
     ],
     "Dimapur": [
       "dimapur"
@@ -560,7 +499,8 @@
       "west nimar"
     ],
     "Basti": [
-      "basti"
+      "basti",
+      "shravasti"
     ],
     "Panch Mahals": [
       "panchmahals",
@@ -588,9 +528,13 @@
     "Kamrup": [
       "kamrup"
     ],
+    "Uttar Dinajpur": [
+      "uttar dinajpur",
+      "north dinajpur",
+      "dinajpur uttar"
+    ],
     "Pali": [
-      "pali",
-      "mohali"
+      "pali"
     ],
     "Ganjam": [
       "ganjam"
@@ -598,7 +542,7 @@
     "Ranga Reddy": [
       "kv rangareddy",
       "rangareddy",
-      "rangareddi"
+      "ranga reddy"
     ],
     "Bokaro": [
       "bokaro"
@@ -633,6 +577,12 @@
     ],
     "Kanpur Dehat": [
       "kanpur dehat"
+    ],
+    "South 24 Parganas": [
+      "south parganas",
+      "south twenty four parganas",
+      "south pargana",
+      "paraganas south"
     ],
     "Jashpur": [
       "jashpur"
@@ -699,7 +649,8 @@
       "nanded"
     ],
     "Kushinagar": [
-      "kushinagar"
+      "kushinagar",
+      "kushi nagar"
     ],
     "Gorakhpur": [
       "gorakhpur"
@@ -731,6 +682,11 @@
     ],
     "Hisar": [
       "hisar"
+    ],
+    "Howrah": [
+      "howrah",
+      "haora",
+      "hawrah"
     ],
     "Kathua": [
       "kathua"
@@ -871,7 +827,8 @@
       "bagalkot"
     ],
     "Jalore": [
-      "jalor"
+      "jalor",
+      "jalore"
     ],
     "Datia": [
       "datia"
@@ -944,7 +901,8 @@
     ],
     "Cooch Behar": [
       "cooch behar",
-      "koch bihar"
+      "koch bihar",
+      "coochbehar"
     ],
     "Karaikal": [
       "karaikal"
@@ -1009,6 +967,9 @@
     "Ambedkar Nagar": [
       "ambedkar nagar"
     ],
+    "Udhampur": [
+      "udhampur"
+    ],
     "Nainital": [
       "nainital"
     ],
@@ -1047,8 +1008,14 @@
     "Kargil": [
       "kargil"
     ],
+    "S.A.S Nagar": [
+      "sas nagar mohali",
+      "sas nagarmohali",
+      "sas nagar"
+    ],
     "Nadia": [
-      "nadia"
+      "nadia",
+      "naihati anandabazar"
     ],
     "Raipur": [
       "raipur"
@@ -1073,7 +1040,8 @@
       "chamrajanagar",
       "ramanagar",
       "chamrajnagar",
-      "chamarajanagar"
+      "chamarajanagar",
+      "ramanagara"
     ],
     "Bengaluru Rural": [
       "bengaluru",
@@ -1084,7 +1052,8 @@
       "balrampur"
     ],
     "Medchal Malkajgiri": [
-      "medchalmalkajgiri"
+      "medchalmalkajgiri",
+      "medchal malkajgiri"
     ],
     "Bikaner": [
       "bikaner"
@@ -1098,6 +1067,11 @@
     ],
     "Sirohi": [
       "sirohi"
+    ],
+    "Mahabubnagar": [
+      "mahabubnagar",
+      "mahbubnagar",
+      "mahabub nagar"
     ],
     "Bathinda": [
       "bathinda"
@@ -1191,7 +1165,6 @@
     ],
     "East": [
       "east",
-      "east sikkim",
       "east delhi",
       "north east delhi",
       "south east delhi"
@@ -1347,6 +1320,10 @@
     "Durg": [
       "durg"
     ],
+    "Aurangabad": [
+      "aurangabad",
+      "aurangabadbh"
+    ],
     "Kaushambi": [
       "kaushambi"
     ],
@@ -1374,7 +1351,8 @@
     ],
     "Sri Potti Sriramulu Nellore": [
       "nellore",
-      "sri potti sriramulu nellore"
+      "sri potti sriramulu nellore",
+      "spsr nellore"
     ],
     "Shamli": [
       "shamli"
@@ -1458,6 +1436,11 @@
     "Pudukkottai": [
       "pudukkottai"
     ],
+    "Dakshin Dinajpur": [
+      "dakshin dinajpur",
+      "south dinajpur",
+      "dinajpur dakshin"
+    ],
     "Sepahijala": [
       "sepahijala"
     ],
@@ -1473,7 +1456,8 @@
       "madhubani"
     ],
     "Bhadrak": [
-      "bhadrak"
+      "bhadrak",
+      "bhadrakr"
     ],
     "Sheikhpura": [
       "sheikhpura",
@@ -1496,6 +1480,10 @@
     ],
     "Bareilly": [
       "bareilly"
+    ],
+    "Ahmedabad": [
+      "ahmedabad",
+      "ahmadabad"
     ],
     "Jalgaon": [
       "jalgaon"
@@ -1556,7 +1544,8 @@
       "shahjahanpur"
     ],
     "East Singhbum": [
-      "east singhbhum"
+      "east singhbhum",
+      "east singhbum"
     ],
     "Haridwar": [
       "haridwar",
@@ -1667,7 +1656,8 @@
     ],
     "Purbi Champaran": [
       "east champaran",
-      "purba champaran"
+      "purba champaran",
+      "purbi champaran"
     ],
     "Sitapur": [
       "sitapur"
@@ -1770,7 +1760,6 @@
     ],
     "North": [
       "north delhi",
-      "north sikkim",
       "north west delhi",
       "north"
     ],
@@ -1850,6 +1839,9 @@
     "Tapi": [
       "tapi"
     ],
+    "Daman": [
+      "daman"
+    ],
     "West Garo Hills": [
       "west garo hills"
     ],
@@ -1870,6 +1862,9 @@
     ],
     "Panipat": [
       "panipat"
+    ],
+    "Puducherry": [
+      "puducherry"
     ],
     "Ganganagar": [
       "ganganagar"
@@ -1963,7 +1958,8 @@
       "jaisalmer"
     ],
     "Ashoknagar": [
-      "ashok nagar"
+      "ashok nagar",
+      "ashoknagar"
     ],
     "Hailakandi": [
       "hailakandi"
@@ -1988,6 +1984,9 @@
     ],
     "Umaria": [
       "umaria"
+    ],
+    "Diu": [
+      "diu"
     ],
     "Mahabubabad": [
       "mahabubabad"
@@ -2030,6 +2029,10 @@
     "Pulwama": [
       "pulwama"
     ],
+    "Bandipora": [
+      "bandipore",
+      "bandipur"
+    ],
     "Uttarkashi": [
       "uttarkashi"
     ],
@@ -2038,7 +2041,8 @@
       "nicobars"
     ],
     "Shopian": [
-      "shupiyan"
+      "shupiyan",
+      "shopian"
     ],
     "Eluru": [
       "eluru"
@@ -2066,6 +2070,10 @@
     ],
     "Fazilka": [
       "fazilka"
+    ],
+    "South Andamans": [
+      "andamans",
+      "south andaman"
     ],
     "Bishnupur": [
       "bishnupur"
@@ -2106,6 +2114,9 @@
     "West Karbi Anglong": [
       "west karbi anglong"
     ],
+    "Dadra And Nagar Haveli": [
+      "dadra and nagar haveli"
+    ],
     "Chhatrapati Sambhajinagar": [
       "chhatrapati sambhajinagar",
       "chatrapati sambhaji nagar"
@@ -2133,7 +2144,8 @@
       "nuapada"
     ],
     "Sivasagar": [
-      "sibsagar"
+      "sibsagar",
+      "sivasagar"
     ],
     "Peren": [
       "peren"
@@ -2170,6 +2182,10 @@
     ],
     "Kolasib": [
       "kolasib"
+    ],
+    "Leh Ladakh": [
+      "leh",
+      "leh ladakh"
     ],
     "Palnadu": [
       "palnadu"
@@ -2212,7 +2228,8 @@
       "longleng"
     ],
     "Dangs": [
-      "the dangs"
+      "the dangs",
+      "dang"
     ],
     "Lower Dibang Valley": [
       "lower dibang valley"
@@ -2246,7 +2263,8 @@
       "tawang"
     ],
     "Gaurela-Pendra-Marwahi": [
-      "gaurelapendramarwahi"
+      "gaurelapendramarwahi",
+      "gaurella pendra marwahi"
     ],
     "Siaha": [
       "saiha"
@@ -2336,6 +2354,9 @@
     "Sribhumi": [
       "sribhumi"
     ],
+    "Bardez": [
+      "bardez"
+    ],
     "Meluri": [
       "meluri"
     ],
@@ -2366,35 +2387,50 @@
     "Namchi": [
       "namchi"
     ],
-    "Mangan": [
-      "mangan"
-    ],
-    "Pherzawl": [
-      "pherzawl"
-    ],
-    "Salumbar": [
-      "salumbar"
-    ],
-    "Beawar": [
-      "beawar"
-    ],
     "Didwana-Kuchaman": [
       "didwanakuchaman"
-    ],
-    "Kotputli-Behror": [
-      "kotputlibehror"
-    ],
-    "Phalodi": [
-      "phalodi"
-    ],
-    "Balotra": [
-      "balotra"
     ],
     "Khairthal-Tijara": [
       "khairthaltijara"
     ],
+    "Kotputli-Behror": [
+      "kotputlibehror"
+    ],
+    "Beawar": [
+      "beawar"
+    ],
+    "Balotra": [
+      "balotra"
+    ],
     "Ahilyanagar": [
       "ahilyanagar"
+    ],
+    "Phalodi": [
+      "phalodi"
+    ],
+    "Pherzawl": [
+      "pherzawl"
+    ],
+    "Poonch": [
+      "poonch"
+    ],
+    "Salumbar": [
+      "salumbar"
+    ],
+    "Bengaluru Urban": [
+      "bengaluru urban"
+    ],
+    "Gurugram": [
+      "gurugram"
+    ],
+    "Nuh": [
+      "nuh"
+    ],
+    "Mangan": [
+      "mangan"
+    ],
+    "Kangpokpi": [
+      "kangpokpi"
     ]
   }
 }
