@@ -14,6 +14,7 @@ class Settings:
     
     SECRET_KEY: str = os.getenv("SECRET_KEY", "fallback_super_secret_string_123")
     ALGORITHM: str = "HS256"
-    MONGO_URL = f"mongodb+srv://{safe_user}:{safe_pass}@{cluster}.mjad70j.mongodb.net/?appName={cluster}"
+    MONGO_URL = f"mongodb://localhost:27017/Local"
+    # MONGO_URL = f"mongodb+srv://{safe_user}:{safe_pass}@{cluster}.mjad70j.mongodb.net/?appName={cluster}"
 
 settings = Settings()

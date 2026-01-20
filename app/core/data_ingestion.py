@@ -375,33 +375,34 @@ def get_fuzzy_match(raw_state, raw_district, learn=True, min_confidence=60):
         return matched_state_key, best_district, best_score
     
     # STEP 7: Global search across all districts (only if local match was poor)
-    if best_score < 70:
-        best_global_district = None
-        best_global_score = 0
-        best_global_state = matched_state_key
+    # COMMENTED OUT FOR NOW AS IT IS RETURNING FALSE STATE MATCHES BY SEARCHING DISTRICTS GLOBALLY
+    # if best_score < 70:
+    #     best_global_district = None
+    #     best_global_score = 0
+    #     best_global_state = matched_state_key
         
-        for official_district in ALL_DISTRICTS:
-            official_lower = official_district.lower()
+    #     for official_district in ALL_DISTRICTS:
+    #         official_lower = official_district.lower()
             
-            for test_name in [raw_district, translated_district]:
-                ratio_score = fuzz.ratio(test_name, official_lower)
-                partial_score = fuzz.partial_ratio(test_name, official_lower)
-                token_sort_score = fuzz.token_sort_ratio(test_name, official_lower)
-                token_set_score = fuzz.token_set_ratio(test_name, official_lower)
+    #         for test_name in [raw_district, translated_district]:
+    #             ratio_score = fuzz.ratio(test_name, official_lower)
+    #             partial_score = fuzz.partial_ratio(test_name, official_lower)
+    #             token_sort_score = fuzz.token_sort_ratio(test_name, official_lower)
+    #             token_set_score = fuzz.token_set_ratio(test_name, official_lower)
                 
-                current_score = max(ratio_score, partial_score, token_sort_score, token_set_score)
+    #             current_score = max(ratio_score, partial_score, token_sort_score, token_set_score)
                 
-                if current_score > best_global_score:
-                    best_global_score = current_score
-                    best_global_district = official_district
-                    best_global_state = DISTRICT_TO_STATE[official_district]
+    #             if current_score > best_global_score:
+    #                 best_global_score = current_score
+    #                 best_global_district = official_district
+    #                 best_global_state = DISTRICT_TO_STATE[official_district]
         
-        # Use global match if it's significantly better
-        if best_global_score >= 75 and best_global_score > best_score:
-            if learn and best_global_score >= 85:
-                add_to_aliases(best_global_district, raw_district, 'districts')
-                add_to_aliases(best_global_state, raw_state, 'states')
-            return best_global_state, best_global_district, best_global_score
+    #     # Use global match if it's significantly better
+    #     if best_global_score >= 75 and best_global_score > best_score:
+    #         if learn and best_global_score >= 85:
+    #             add_to_aliases(best_global_district, raw_district, 'districts')
+    #             add_to_aliases(best_global_state, raw_state, 'states')
+    #         return best_global_state, best_global_district, best_global_score
     
     # Return the best match we found
     if best_score >= min_confidence:

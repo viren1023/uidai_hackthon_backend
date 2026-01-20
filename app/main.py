@@ -15,10 +15,18 @@ class metadata(BaseModel):
     pass
 
 class filter(BaseModel):
-    date:Date
-    state:str
+    todate:Date
+    fromdate:Date
     distric:str
     pincode:str
+    pass
+
+class summary(BaseModel):
+    todate:Date
+    fromdate:Date
+    state:str
+    distric:str
+    source:str
     pass
 
 async def background_processing(contents: bytes, source: DataSource):
@@ -52,10 +60,15 @@ async def upload_csv(
 
 @app.post("/search_filter")
 def search_filter(data:filter):
-    
+    print(data)
     pass
 
 @app.post("metadata")
 def metadata():
     
+    pass
+
+@app.post("summary")
+def summary(data:summary):
+    print(data)
     pass
